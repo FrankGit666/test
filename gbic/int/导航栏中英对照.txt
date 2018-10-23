@@ -1,0 +1,13 @@
+首页	GBIC-Home.html
+	
+中心简介	GBIC-Introduction.html
+	
+科学研究	GBIC-Scientific.html
+	
+认证培训	GBIC-Train.html
+	
+国际教育	GBIC-Education.html
+	
+研究实体	GBIC-Research.html
+人才队伍	GBIC-Partner.html
+新闻公告	GBIC-News.html

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <style>
+        .tab1{
+            border: 1px solid #ddd;
+            border-top: none;
+            padding: 100px;
+            border-radius: 0 0 5px 5px;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="container">
+        <div class="row">
+        	<ul class="nav nav-tabs">
+            	<li><a href="#">海棠学院</a></li>
+                <li class=""><a href="#">海棠学院</a></li>
+                <li><a href="#">海棠学院</a></li>
+                <li>
+                    <a href="#" data-toggle="dropdown">海棠学院 <span class="caret"></span></a>
+                    <ul class="nav nav-default dropdown-menu nav-transparent">
+                        <li><a href="#">html</a></li>
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">javascript</a></li>
+                        <li><a href="#">less</a></li>
+                        <li><a href="#">bootstrap</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row"  style="margin-top:10px;">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#con1" data-toggle="tab">海棠学院</a></li>
+                <li><a href="#con2" data-toggle="tab">谢耀庆</a></li>
+                <li><a href="#con3" data-toggle="tab">Frank</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="con1" class="tab-pane active">html</div>
+                <div id="con2" class="tab-pane">css</div>
+                <div id="con3" class="tab-pane">js</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#con4" data-toggle="tab">海棠学院</a></li>
+                    <li><a href="#con5" data-toggle="tab">谢耀庆</a></li>
+                    <li><a href="#con6" data-toggle="tab">Frank</a></li>
+                </ul>
+                <div class="tab-content tab1">
+                    <div id="con4" class="tab-pane active">html</div>
+                    <div id="con5" class="tab-pane">css</div>
+                    <div id="con6" class="tab-pane">js</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

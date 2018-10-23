@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>折叠菜单（1组）</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <!-- 1、吧所有的面板都放在一个父级里，并且给父级添加一个panel-group，还有一个id -->
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <!-- 2、给要点击的元素添加一个data-parent属性，并让他的值与父级的id一样 -->
+                            <h3 class="panel-title" data-parent="#accordion" data-toggle="collapse" data-target="#con1">海棠学院</h3>
+                        </div>
+                        <!-- 3、 需要给内容添加一个class味collapse-->
+                        <div id="con1" class="in collapse">
+                                <div class="panel-body">
+                                    专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训
+                                </div>
+                        </div>
+                    </div>
+    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" data-parent="#accordion" data-toggle="collapse" data-target="#con2">海棠学院</h3>
+                        </div>
+                        <div id="con2" class="in collapse">
+                                <div class="panel-body">
+                                    专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

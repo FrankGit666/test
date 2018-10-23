@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>弹出层</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+
+</head>
+
+<body style="height:2000px;">
+    <!-- 
+        注意：
+        1、弹出层必须放在body里
+        2、弹出层里面不能再嵌套别的内容
+        3、弹出层出来以后，页面的滚动条会被覆盖
+
+        modal                   弹出层的父级
+        modal-dialog            弹出层    
+        modal-content           弹出层的内容区域
+        modal-header            弹出层的头部区域
+        modal-body              弹出层的主题区域
+        modal-footer            弹出层的底部区域
+        fade                    让弹出层有动态效果
+     -->
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-primary" data-toggle="modal" data-target=".myModal1">弹出一个小层</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" data-toggle="modal" data-target=".myModal2">弹出一个大层</button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" data-toggle="modal" data-target=".myModal3">弹出一个小小层</button>
+        </div>
+    </div>
+
+    <div class="modal fade myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>海棠学院</h4>
+                </div>
+                <div class="modal-body">
+                    <p>最近在用微信web开发者工具进行移动测试的时候，需要开启web服务，因此尝试了配置本地服务器，但是win10果然bug连连，这里记录下解决的过程，供参考。</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal-lg是用来设置弹出层的尺寸，他必须给modal-dialog才能生效 -->
+    <div class="modal fade myModal2">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4>海棠学院</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>最近在用微信web开发者工具进行移动测试的时候，需要开启web服务，因此尝试了配置本地服务器，但是win10果然bug连连，这里记录下解决的过程，供参考。</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal-lg是用来设置弹出层的尺寸，他必须给modal-dialog才能生效 -->
+    <div class="modal fade myModal3">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>海棠学院</h4>
+                </div>
+                <div class="modal-body">
+                    <p>最近在用微信web开发者工具进行移动测试的时候，需要开启web服务，因此尝试了配置本地服务器，但是win10果然bug连连，这里记录下解决的过程，供参考。</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>折叠菜单</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+
+</head>
+
+<body>
+    <!-- 
+        1、给要点击的那个元素添加一个data-toggle="collapse"
+            并且需要给它添加一个data-target,让他的值与对应的内容区域的id货class相同
+        2、给对应的内容区域添加一个id或class，与target对应
+
+        注意
+            1、内容区域不能有padding值
+            2、第一次点击target时，是收缩，用class="in"
+     -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="#" data-toggle="collapse" data-target="#con">海棠学院</a> 
+                            </h3>
+                        </div>
+                        <div id="con" class="in">
+                                <div class="panel-body">
+                                    专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训专注前端培训
+                                </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

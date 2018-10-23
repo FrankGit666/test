@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>轮播</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <style>
+        #pic{
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1、写一个父级，放一个id和一个carousel的class
+            slide                       给图片增加运动的效果
+            data-interval="500"         间隔时间，不要低于400，容易出现问题
+            data-ride="carousel"        页面一加载后开始播放                   
+        2、小圆点的内容要放在一个class为carousel-indicators的层里
+        3、图片内容区域要放在一个class为carousel-inner的层里
+            每一项内容都需要放在一个item的层里
+            这个里面也可以放文字，那需要来一个父级，父级的class为carousel-caption
+        4、左右按钮按以下的格式写:
+            <a href="#pic" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+            <a href="#pic" class="carousel-control right" data-slide="next">&rsaquo;</a>
+     -->
+    <div class="container">
+        <div id="pic" class="carousel slide" data-interval="2000" data-ride="carousel">
+            <!-- 小圆点 -->
+            <ol class="carousel-indicators">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <!-- 轮播图的图片 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="../image/gbic-lunbo-01.png" alt="">
+                    <div class="carousel-caption">
+                        <h3>这里是标题1</h3>
+                        <p>这里是内容，非常多非常多</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../image/gbic-lunbo-02.png" alt="">
+                    <div class="carousel-caption">
+                        <h3>这里是标题1</h3>
+                        <p>这里是内容，非常多非常多</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../image/gbic-lunbo-03.png" alt="">
+                    <div class="carousel-caption">
+                        <h3>这里是标题1</h3>
+                        <p>这里是内容，非常多非常多</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../image/gbic-lunbo-04.png" alt="">
+                    <div class="carousel-caption">
+                        <h3>这里是标题1</h3>
+                        <p>这里是内容，非常多非常多</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 左右按钮 -->
+            <a href="#pic" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+            <a href="#pic" class="carousel-control right" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

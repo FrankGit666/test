@@ -1,0 +1,104 @@
+/* css for pc */
+.rowpc .carousel {
+    margin-top: -50px;
+}
+.rowpc .content {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+#tabs ul {
+    list-style:none;
+    display:block;
+    width: 20%;
+    padding-left: 0;
+    margin:0;
+    float: left;
+}
+
+#tabs ul li {
+    list-style:none;
+    height:50px;
+    margin-top: -1px;
+    line-height: 50px;
+    text-align:center;
+    font-size: 16px;
+    cursor:pointer;
+    border:1px solid #0345682a;
+}
+#lists .active {
+    color: #034568;
+    font-weight: 600;
+    border-right:5px solid #034568;
+    transition: 0.3s;
+
+}
+#tabs div {
+    width: 80%;
+    padding:0 25px;
+    margin-top:-10px; 
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 35px;
+    text-align: justify;
+    font-size: 15px;
+    float: left;
+} 
+
+.rowpc .tabs::before, .rowpc .tabs::after {
+    counter-reset: "";
+    display: table;
+}
+.rowpc .tabs::after {
+    clear: both;
+}
+div .active{
+    display:block !important;
+}
+
+/* css for phone */
+
+.rowphone .content div h4 {
+    text-align: center;
+    font-weight: bold;
+}
+.rowphone .content div p {
+    text-align: justify;
+    line-height: 2em;
+    text-indent: 1.2em;
+}
+
+
+
+/* 响应式 */
+@media(min-width:400px){
+    .rowpc {
+        display: none;
+    }
+    .rowphone {
+        display: block;
+    }
+}
+@media(min-width:768px){
+    .rowpc {
+        display: none;
+    }
+    .rowphone {
+        display: block;
+    }
+}
+@media(min-width:992px){
+    .rowpc {
+        display: block;
+    }
+    .rowphone {
+        display: none;
+    }
+}
+@media(min-width:1200px){
+    .rowpc {
+        display: block;
+    }
+    .rowphone {
+        display: none;
+    }
+}

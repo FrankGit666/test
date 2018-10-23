@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>提示标签</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <style>
+        p{
+            margin: 100px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <p><a href="#" class="tool" data-target="tooltip" data-placement="left" title="Frank">谢耀庆</a> Bootstrap 为大部分插件所具有的动作提供了自
+                <a href="#" class="tool" data-target="tooltip" data-placement="top" title="这里没有内容">谢耀庆</a>定义事件。一般来说，这些事
+                <a href="#" class="tool" data-target="tooltip" data-placement="right" title="天津理工大学-计算机与通信工程学院-网络工程专业">谢耀庆</a>件都有不定式和过去式两种动词的命名形式，例如，
+                <a href="#" class="tool" data-target="tooltip" data-placement="top" title="单身">谢耀庆</a>不定式形式的动词（例如 show）表示其在事件开始时被触发；而过去式动词（例如 shown ）表示
+                <a href="#" class="tool" data-target="tooltip" data-placement="bottom" title="贵州铜仁">谢耀庆</a>在动作执行完毕之后被触发。</p>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-primary tool" data-toggle="tooltip" title="Frank" data-placement="top">Frank</button><br><br>
+            <button class="btn btn-primary tool" data-toggle="tooltip" title="Frank" data-placement="right">Frank</button><br><br>
+            <button class="btn btn-primary tool" data-toggle="tooltip" title="Frank" data-placement="bottom">Frank</button><br><br>
+            <button class="btn btn-primary tool btnShow" data-toggle="tooltip" title="Frank" data-placement="left">Frank</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+        $(".tool").tooltip();
+        // 获取.tool这个class，然后执行tooltip()函数
+        $(".btnShow").tooltip('show');
+    </script>
+</body>
+</html>
