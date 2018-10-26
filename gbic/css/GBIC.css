@@ -4,6 +4,9 @@
         font-size: 12px !important;
     }
 }
+body {
+    background-color: #f5f5f5;
+}
 
 /* --------------------------导航-------------------------- */
 .navbar{
