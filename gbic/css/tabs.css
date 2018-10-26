@@ -69,6 +69,7 @@
     background-color: #6cceff17;
 }
 .tabs .hide .dynamics img {
+    width: 180px;
     height: 100px;
     float: left;
 }
