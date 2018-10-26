@@ -1,5 +1,7 @@
 /* css for pc */
-
+.bgcontainer {
+    background-color: #fff;
+}
 .rowpc .carousel {
     margin-top: -50px;
 }
