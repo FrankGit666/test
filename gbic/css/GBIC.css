@@ -133,11 +133,14 @@ body {
     border: 0.5px solid rgba(124, 136, 143, 0.171);
 }
 .hzhb-logo:hover {
-    /* border: 1px solid #ccc; */
-    border: 0.5px solid rgba(4, 113, 177, 0.356);
     border-radius: 4px;
     -webkit-box-shadow: -3px -3px 20px rgba(85, 81, 81, 0.267);
             box-shadow: -3px -3px 20px rgba(85, 81, 81, 0.267);
+}
+.hzhb-logo a:hover {
+    border-radius: 4px;
+    -webkit-box-shadow: -3px -3px 20px #fff;
+            box-shadow: -3px -3px 20px #fff;
 }
 .hzhb {
     text-align: center;
