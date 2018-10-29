@@ -14,7 +14,7 @@
     display:block;
     width: 20%;
     padding-left: 0;
-    margin:0;
+    margin-top:15px;
     float: left;
 }
 
@@ -37,7 +37,7 @@
 .tabs .hide {
     width: 80%;
     padding:0 25px;
-    margin-top:-10px; 
+    margin-top:-4px; 
     font-size: 14px;
     letter-spacing: 1px;
     line-height: 35px;
