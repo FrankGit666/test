@@ -1,6 +1,8 @@
 /* css for pc */
 .bgcontainer {
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
+    /* -webkit-box-shadow: -1px 1px 5px #767676;
+            box-shadow: -1px 1px 5px #767676; */
 }
 .rowpc .carousel {
     margin-top: -50px;
@@ -9,64 +11,86 @@
     margin-top: 35px;
     margin-bottom: 35px;
 }
-.tabs ul {
-    list-style:none;
-    padding-left: 0;
-    height:50px;
-    margin-top:15px;
-    border-bottom:1px solid #676767;
+@media(min-width:400px){
+    .tabs ul {
+        list-style:none;
+        padding-left: 0;
+        height:30px;
+        border-top:1px solid #676767;
+        border-bottom:1px solid #676767;
+    }
+}
+@media(min-width:992px){
+    .tabs ul {
+        list-style:none;
+        padding-left: 0;
+        height:50px;
+        border-top:1px solid #676767;
+        border-bottom:1px solid #676767;
+    }
 }
 
-.tabs ul li {
-    width: 20%;
-    float: left;
-    list-style:none;
-    height: 50px;
-    line-height: 50px;
-    text-align:center;
-    font-size: 16px;
-    cursor: pointer;
+@media(min-width:400px){
+    .tabs ul li {
+        float: left;
+        list-style:none;
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        padding: 0 10px 5px;
+        text-align:center;
+        font-size: 12px;
+        cursor: pointer;
+    }
 }
+@media(min-width:992px){
+    .tabs ul li {
+        float: left;
+        list-style:none;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+        padding: 0 30px 10px;
+        text-align:center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
 .lists .active {
-    border-bottom:3px solid #034568;
+    /* border-bottom:3px solid #034568; */
+    background-color: #222;
+    color: #fff;
     transition: 0.3s;
+    
 }
-.tabs .hide {
-    margin-top: 30px;
-    letter-spacing: 1px;
-    line-height: 35px;
-    text-align: justify;
-    font-size: 15px;
-    /* text-indent: 2.5em; */
-} 
-.tabs .hide .p {
-    display: inline-block;
-    text-align: right;
-    line-height: 50px;
+@media(min-width:400px){
+    .tabs .hide {
+        line-height: 24px;
+        margin-top: 32px;
+        text-align: justify;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 10px;
+    } 
 }
-.tabs .hide img {
-    width: 400px;
+@media(min-width:992px){
+    .tabs .hide {
+        margin-top: 30px;
+        letter-spacing: 1px;
+        line-height: 35px;
+        text-align: justify;
+        font-size: 15px;
+    } 
 }
-.tabs .hide  p span {
-    padding-left: 100px;
-    font-size: 35px;
-}
-.tabs .hide  p em {
-    font-size: 20px;
-    color: #616161;
-    padding-bottom: 15px;
-    padding-left: 40px;
-    border-bottom: 5px solid #111;
-}
+
 
 .tabs .hide .dynamics {
     margin: 8px 0 ;
     padding: 10px;
-    cursor: pointer;
 }
 .tabs .hide .dynamics img {
     width: 180px;
-    height: 100px;
     float: left;
 }
 .tabs .hide .dynamics .dybamicsTitle {
@@ -109,7 +133,7 @@ div .active{
 
 
 /* 响应式 */
-@media(min-width:400px){
+/* @media(min-width:400px){
     .rowpc {
         display: none;
     }
@@ -140,4 +164,4 @@ div .active{
     .rowphone {
         display: none;
     }
-}
+} */

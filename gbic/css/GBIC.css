@@ -226,8 +226,8 @@ body {
     background-color: #676767;
 }
 .gotop:hover {
-    -webkit-box-shadow: 5px 5px 10px #0345688c;
-            box-shadow: 5px 5px 10px #0345688c;
+    -webkit-box-shadow: 3px 3px 5px #0345688c;
+            box-shadow: 3px 3px 5px #0345688c;
 }
 .gotop a i {
     padding: 10px;
