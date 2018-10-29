@@ -1,6 +1,6 @@
 /* css for pc */
 .bgcontainer {
-    background-color: #fff;
+    background-color: #fafafa;
 }
 .rowpc .carousel {
     margin-top: -50px;
@@ -33,7 +33,6 @@
 }
 .tabs .hide {
     margin-top: 30px;
-    font-size: 14px;
     letter-spacing: 1px;
     line-height: 35px;
     text-align: justify;
@@ -76,7 +75,7 @@
 }
 .tabs .hide .dynamics .dybamicsTitle a {
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
 }
 .tabs .hide .dynamics .dybamicsTitle p {
     font-size: 12px;
