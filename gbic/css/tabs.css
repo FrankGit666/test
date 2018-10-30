@@ -39,7 +39,7 @@
         vertical-align: middle;
         padding: 0 10px 5px;
         text-align:center;
-        font-size: 12px;
+        font-size: 14px;
         cursor: pointer;
     }
 }
@@ -52,8 +52,11 @@
         vertical-align: middle;
         padding: 0 30px 10px;
         text-align:center;
-        font-size: 16px;
+        font-size: 14px;
         cursor: pointer;
+    }
+    .tabs ul li:hover {
+        color:#0586ff;
     }
 }
 
@@ -69,18 +72,16 @@
         line-height: 24px;
         margin-top: 32px;
         text-align: justify;
-        font-size: 12px;
-        letter-spacing: 1px;
+        font-size: 14px;
         padding: 10px;
     } 
 }
 @media(min-width:992px){
     .tabs .hide {
-        margin-top: 30px;
-        letter-spacing: 1px;
-        line-height: 35px;
+        margin-top: 25px;
+        line-height: 30px;
         text-align: justify;
-        font-size: 15px;
+        font-size: 14px;
     } 
 }
 
@@ -99,7 +100,7 @@
 }
 .tabs .hide .dynamics .dybamicsTitle a {
     color: #000;
-    font-size: 14px;
+    font-size: 12px;
 }
 .tabs .hide .dynamics .dybamicsTitle p {
     font-size: 12px;
@@ -131,37 +132,3 @@ div .active{
 }
 
 
-
-/* 响应式 */
-/* @media(min-width:400px){
-    .rowpc {
-        display: none;
-    }
-    .rowphone {
-        display: block;
-    }
-}
-@media(min-width:768px){
-    .rowpc {
-        display: none;
-    }
-    .rowphone {
-        display: block;
-    }
-}
-@media(min-width:992px){
-    .rowpc {
-        display: block;
-    }
-    .rowphone {
-        display: none;
-    }
-}
-@media(min-width:1200px){
-    .rowpc {
-        display: block;
-    }
-    .rowphone {
-        display: none;
-    }
-} */
