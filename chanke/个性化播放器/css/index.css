@@ -47,19 +47,19 @@ body {
 }
 .previou {
     position: absolute;
-    left: 15px;
+    left: 25px;
     width: 30px;
     height: 30px;
 }
 .btn {
     position: absolute;
-    left: 50px;
+    left: 65px;
     width: 30px;
     height: 30px;
 }
 .next {
     position: absolute;
-    left: 85px;
+    left: 105px;
     width: 30px;
     height: 30px;
 }
@@ -69,14 +69,14 @@ body {
 }
 .volumn {
     position: absolute;
-    right: 50px;
+    right: 20px;
     width: 30px;
     height: 30px;
 }
 .progress {
     position: absolute;
     left: 50%;
-    margin-left: -200px;
+    margin-left: -165px;
     width: 400px;
     height: 30px;
     /* background: #333; */
