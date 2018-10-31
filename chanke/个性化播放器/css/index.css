@@ -45,9 +45,21 @@ body {
     color: #fff;
     font-size: 30px;
 }
+.previou {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+}
 .btn {
     position: absolute;
     left: 50px;
+    width: 30px;
+    height: 30px;
+}
+.next {
+    position: absolute;
+    left: 85px;
     width: 30px;
     height: 30px;
 }
@@ -100,7 +112,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px;
     height: 2px;
     background: #fff;
 }
@@ -117,7 +128,7 @@ body {
     position: absolute;
     left: 18px;
     top: 50%;
-    margin: -4px;
+    margin-top: -4px;
     display: block;
     width: 8px;
     height: 8px;
