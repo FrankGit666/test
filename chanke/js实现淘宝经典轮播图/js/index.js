@@ -22,8 +22,9 @@ function moveImg(dis) {
             oMain.style.left = oMain.offsetLeft + eachDis + 'px';
         }else{
             clearInterval(timer);
-            oMain.style.left = newLeft + 'px';  //当我们不清楚到底要挪动多少的时候，我们需要强制让他回到目标点上
+            oMain.style.left = newLeft + 'px';  //当我们不清楚到底要挪动多少的时候,可能会挪超出本该挪动的距离，我们需要强制让他回到目标点上
             
+            //保证无缝链接 当往前翻到原队列第一张时，下一次往前翻肯定是到当前队列（首尾加了图片的队列）的第一张，当下次再往前翻的时候，我们会翻到当前队列的第一张，和原队列的第五张图片一样，所以我们需要在这一瞬间让他切换到原队列的第五张，保证无缝链接。
             if(newLeft == -3120) {  //if语句判断时用 双等于符号（ == ） 而不是 等于符号（ = ）
                 oMain.style.left = -520 + 'px';
             }if(newLeft == 0){  //if语句判断时用 双等于符号（ == ） 而不是 等于符号（ = ）
