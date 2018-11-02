@@ -156,7 +156,7 @@ body {
     /* background-color: #034568; */
     background-color: #222;
     /* opacity: 0.7; */
-    color: #fff;
+    color: #848d95;
 }
 
 .bottom {
@@ -165,14 +165,15 @@ body {
     padding-bottom: 1em;
 }
 .row-bottom .bottom a {
-    color: #fff;
+    color: #848d95;
     text-decoration: none;
 }
 .row-bottom .bottom a:hover {
-    color: #0586ff;
+    color: #fff;
 }
 .row-bottom .bottom h5 {
-    color: #f5f5f5;
+    color: #848d95;
+    font-weight: 900;
 }
 .row-bottom .bottom .row ul a {
     display: block;
