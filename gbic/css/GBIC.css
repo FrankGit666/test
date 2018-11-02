@@ -219,14 +219,13 @@ body {
 .gotop a i {
     padding: 10px;
     font-size: 28px;
-    color: #fff;
+    color: #848d95;
 }
 .gotop a i:hover {
-    color: #034568;
+    color: #FFF;
 }
 
 .gotop a, .gotop a:hover, .gotop a:active {
-    color: #FFF;
     text-decoration: none;
 }
 

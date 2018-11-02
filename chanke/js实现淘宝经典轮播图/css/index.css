@@ -1,0 +1,76 @@
+body, ul, li, a, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 520px;
+    height: 280px;
+    margin: 100px auto;  /*margin:0 auto 设置居中的前提是自身要有宽度*/
+    border: 3px solid black;
+    overflow: hidden; /*隐藏掉矩形框外面的图片*/
+}
+
+.main {
+    position: absolute;
+    left: -520px;
+    width: 3640px;
+    height: 280px;
+    font-size: 0;
+}
+
+.list {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -40px;
+    font-size: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 7px;
+}
+
+
+
+.list li {    /*这里的权重是10+1=11*/
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.list .active {    /*这里的权重是10+1=11*/
+    background: orangered;
+}
+
+.btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px; 
+    width: 30px;
+    height: 40px;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.container:hover .btn, .container:hover .list {
+    display: inline-block;
+}
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
