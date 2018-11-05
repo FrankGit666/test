@@ -2,6 +2,11 @@ var tabs = document.getElementById("tabs").getElementsByTagName("li");
 console.log(tabs);
 var lists = document.getElementById("lists").getElementsByTagName("ul");
 console.log(lists);
+var times = document.getElementById('tabs').getElementsByClassName('active')[0],
+    timesOut = times.getElementsByTagName('span');
+
+
+
 
 for(var i = 0; i<tabs.length; i++){
     tabs[i].onclick = showlist;
@@ -37,4 +42,23 @@ window.onscroll = function(){
     }
     // console.log(scrollTop); 
 }
+
+
+
+var myDate = new Date();
+var hour = myDate.getHours();
+var min = myDate.getMinutes();
+var sec = myDate.getSeconds();
+
+function timesOut() {
+    var H = hour - 0;
+    var M = min - 0;
+    var S = sec - 0;
+    msg = "即将开始" + '<br>' + "局开始" + " " + H + ':' + M + ':' + S;
+    timesOut.innerHTML = msg;
+    setInterval(timesOut,1000);
+    console.log(setInterval(timesOut,1000));
+}
+
+
 

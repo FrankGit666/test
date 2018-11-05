@@ -125,12 +125,12 @@ var timer, timer2,
     flag = true;
 
 function moveImg(dis) {
-    flag = false;
     var time = 400;
     var eachTime = 20;
     var eachDis = dis/(time/eachTime);
 
     var newLeft = oMain.offsetLeft + dis;
+    flag = false;
     function eachMove(){
         if(dis>0 && oMain.offsetLeft < newLeft || dis < 0 && oMain.offsetLeft > newLeft){
             oMain.style.left = oMain.offsetLeft + eachDis + 'px';
