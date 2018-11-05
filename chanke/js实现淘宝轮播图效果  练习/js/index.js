@@ -1,3 +1,4 @@
+// 上下翻页
 // var oPrev = document.getElementById('prev'),
 //     oNext = document.getElementById('next'),
 //     oMain = document.getElementsByClassName('main')[0];
@@ -120,9 +121,11 @@ var oPrev = document.getElementById('prev'),
 
 
 var timer, timer2,
-    index = 0;
+    index = 0,
+    flag = true;
 
 function moveImg(dis) {
+    flag = false;
     var time = 400;
     var eachTime = 20;
     var eachDis = dis/(time/eachTime);
@@ -139,17 +142,31 @@ function moveImg(dis) {
             }if(newLeft == 0){
                 oMain.style.left = -2600 + 'px';
             }
-
+            flag = true;
         }
     }
     timer = setInterval(eachMove,eachTime);
 }
 oPrev.onclick = function(){
+    if(flag == false) return;
     moveImg(520);
+    if(index == 0){
+        index = 4;
+    }else{
+        index--;
+    }
+    OLiStyle();
 }
 
 oNext.onclick = function(){
+    if(flag == false) return;
     moveImg(-520);
+    if(index == 4){
+        index = 0;
+    }else{
+        index++;
+    }
+    OLiStyle();
 }
 
 
