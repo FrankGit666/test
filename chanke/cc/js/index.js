@@ -2,8 +2,7 @@ var tabs = document.getElementById("tabs").getElementsByTagName("li");
 console.log(tabs);
 var lists = document.getElementById("lists").getElementsByTagName("ul");
 console.log(lists);
-var times = document.getElementById('tabs').getElementsByClassName('active')[0],
-    timesOut = times.getElementsByTagName('span');
+var times = document.getElementById('times');
 
 
 
@@ -45,20 +44,32 @@ window.onscroll = function(){
 
 
 
-var myDate = new Date();
-var hour = myDate.getHours();
-var min = myDate.getMinutes();
-var sec = myDate.getSeconds();
 
-function timesOut() {
-    var H = hour - 0;
-    var M = min - 0;
-    var S = sec - 0;
-    msg = "即将开始" + '<br>' + "局开始" + " " + H + ':' + M + ':' + S;
-    timesOut.innerHTML = msg;
-    setInterval(timesOut,1000);
-    console.log(setInterval(timesOut,1000));
-}
-
-
-
+function countTime() {  
+    //获取当前时间  
+    var date = new Date();  
+    var now = date.getTime();  
+    //设置截止时间  
+    var str="2018/11/17 00:00:00";
+    var endDate = new Date(str); 
+    var end = endDate.getTime();  
+    
+    //时间差  
+    var leftTime = end-now; 
+    //定义变量 d,h,m,s保存倒计时的时间  
+    var d,h,m,s;  
+    if (leftTime>=0) {  
+        d = Math.floor(leftTime/1000/60/60/24);  
+        h = Math.floor(leftTime/1000/60/60%24);  
+        m = Math.floor(leftTime/1000/60%60);  
+        s = Math.floor(leftTime/1000%60); 
+    }  
+    //将倒计时赋值到div中 
+    times.innerHTML = "即将开始<br>局开始" + " " + h + ":" + m + ":" + s ; 
+    // document.getElementById("_d").innerHTML = d+"天";  
+    // document.getElementById("_h").innerHTML = h+"时";  
+    // document.getElementById("_m").innerHTML = m+"分";  
+    // document.getElementById("_s").innerHTML = s+"秒";  
+    //递归每秒调用countTime方法，显示动态时间效果  
+    setTimeout(countTime,1000);  
+}  

@@ -1,8 +1,8 @@
+
+
 console.log("start");
 working(10*1000);
 console.log("end");
-
-
 
 function working(time){
     var nowTime = Date.now();
@@ -12,3 +12,5 @@ function working(time){
         nowTime = Date.now();
     }
 }
+
+
