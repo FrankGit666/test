@@ -321,7 +321,7 @@ a {
     font-size: 16px;
     line-height: 16px;
     color: #f1393a;
-    margin-top: 14px;
+    margin: 14px 0 16px;
 }
 .seckill-goods .info .price del {
     font-size: 12px;
