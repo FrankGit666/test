@@ -1,4 +1,4 @@
-body, ul, li {
+body, ul, li, a, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
@@ -470,7 +470,6 @@ a {
     float: left;
     width: 57px;
     height: 57px;
-    margin-top: 15px;
     margin-right: 10px;
     background: #ff6700 url(../img/mi-logo.png) no-repeat 50% 50%;
 }
@@ -485,24 +484,24 @@ a {
     float: left;
 
 }
-.site-info .info-text .site {
-    margin: 0;
+.site-info .info-text .sites {
     line-height: 18px;
     font-size: 0;
 }
 
 .site-info .info-text .sites a {
     color: #757575;
+    font-size: 12px;
     
 }
-.site-info .info-text .sites span {
-    padding: 0 2px;
-    font-size: 12px;
-    color: #424242;
-    font-family: sans-serif;
+.site-info .info-text .sites a:hover {
+    color: #ff6700;
 }
-.site-info .container p:last-child {
-    margin-top:0;
+.site-info .info-text .sites span {
+    margin: 0 3px;
+    font-size: 12px;
+    color: #b0b0b0;
+    font-family: sans-serif;
 }
 
 .site-info .slogan {
@@ -518,5 +517,11 @@ a {
 .site-info .info-links {
     float: right;
     margin: 4px;
-    margin-top: 14px;
+}
+
+.info-statement, .info-statement a {
+    color: #b0b0b0;
+}
+.info-statement a:hover {
+    color: #ff6700;
 }
