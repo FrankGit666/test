@@ -6,7 +6,8 @@ var oAudio = document.getElementById("audio"),
     oProActive = document.getElementsByClassName("pro-active")[0],
     oProBox = document.getElementsByClassName("pro-box")[0],
     oRadioBox = document.getElementsByClassName("radio-box")[0],
-    oPreviou = document.getElementsByClassName('previou')[0];
+    oPreviou = document.getElementsByClassName('previou')[0],
+    oNext = document.getElementsByClassName('next')[0];
 
 var timer,
     duration,
@@ -93,7 +94,29 @@ oRadioBox.onmousedown = function() {
 
 // oAudio.src = "../source/song2.mp3";
 
-oPreviou.onclick = function(){
-    oAudio.src = "../source/son.mp3";
+
+var a = new Array();
+    a[0] = "./source/song0.mp3";
+    a[1] = "./source/song1.mp3";
+    a[2] = "./source/song2.mp3";
+var index1 = 2,
+    index2 = 0,
+    len = a.length;
+oPreviou.onclick = function() {
+    for(var i = 0; i< a.length; i++){
+        if(a[i] == oAudio.src) {
+            console.log(i);
+        }
+    }
+    // oAudio.src = a[2];
+    // musicPlay();
+}
+oNext.onclick = function() {
+    if(index2 == len-1) {
+        index2 = 0;
+    }else{
+        index2++;
+    }
+    oAudio.src = a[index2];
     musicPlay();
 }
