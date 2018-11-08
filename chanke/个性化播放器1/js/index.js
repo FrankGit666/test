@@ -2,12 +2,17 @@ var oAudio = document.getElementById("audio"),
     oCurrentTime = document.getElementsByClassName("current-time")[0],
     oAllTime = document.getElementsByClassName("all-time")[0],
     oBtn = document.getElementsByClassName("btn")[0],
+    oWrapper = document.getElementsByClassName("wrapper")[0],
+    oProgress = document.getElementsByClassName("progress")[0],
     oIsPlay = document.getElementsByClassName("icon")[0],
+    oProBg = document.getElementsByClassName("pro-bg")[0],
     oProActive = document.getElementsByClassName("pro-active")[0],
     oProBox = document.getElementsByClassName("pro-box")[0],
     oRadioBox = document.getElementsByClassName("radio-box")[0],
     oPreviou = document.getElementsByClassName('previou')[0],
-    oNext = document.getElementsByClassName('next')[0];
+    oNext = document.getElementsByClassName('next')[0],
+    oVolumn = document.getElementsByClassName("volumn")[0],
+    oVol = document.getElementsByClassName("vol")[0];
 
 var timer,
     duration,
@@ -33,15 +38,18 @@ function  conversion (time) {
 
 oBtn.onmouseup = function() {
     if(oAudio.paused) {
-        musicPlay()
+        musicPlay();
     }else{
         musicPause();
     }
 }
 function musicPlay() {
+    clearInterval(timer);
     oAudio.play();
     oIsPlay.className = "iconfont icon-suspend_icon";
     timer = setInterval(movePro,200);
+    // oNext.onclick();
+
 }
 function musicPause() {
     oAudio.pause();
@@ -53,6 +61,7 @@ function movePro() {
     // oAudio.oCurrentTime/oAudio.duration * allWidth
     var currentTime = oAudio.currentTime;
     oCurrentTime.innerHTML = conversion(currentTime);
+    oAllTime.innerHTML = conversion(oAudio.duration);
     //这个计时器是有延迟的。暂停会出现跳秒的问题，这时候把计时器的刷新时间由1000减少到200；
     oProActive.style.width = currentTime/duration * bgWidth + 'px';
 }
@@ -62,11 +71,12 @@ oAudio.onended = function () {
     oAudio.currentTime = 0;
     oCurrentTime.innerHTML = conversion(0);
     oProActive.style.width = 0 + "px";
-    musicPlay();
+    oNext.onclick();
 }
 
 //按下之后才能拖
-oRadioBox.onmousedown = function() {
+oRadioBox.onmousedown = function(e) {
+    e.stopPropagation();
     clearInterval(timer);
     var c = oAudio.currentTime;
     document.body.onmousemove = function(e) {
@@ -81,7 +91,7 @@ oRadioBox.onmousedown = function() {
         oProActive.style.width = newWidth + "px";
         c = newWidth/bgWidth * duration;
         oCurrentTime.innerHTML = conversion(c);
-        // musicPlay();
+        // clearInterval(timer);
     }
     document.body.onmouseup = function() {
         document.body.onmousemove = null;
@@ -92,25 +102,26 @@ oRadioBox.onmousedown = function() {
     }
 }
 
-// oAudio.src = "../source/song2.mp3";
 
-
+// 点击上一首，下一首
 var a = new Array();
     a[0] = "./source/song0.mp3";
     a[1] = "./source/song1.mp3";
     a[2] = "./source/song2.mp3";
-var index1 = 2,
+var index1 = 0,
     index2 = 0,
     len = a.length;
+
 oPreviou.onclick = function() {
-    for(var i = 0; i< a.length; i++){
-        if(a[i] == oAudio.src) {
-            console.log(i);
-        }
+    if(index1 == 0) {
+        index1 = 2;
+    }else{
+        index1--;
     }
-    // oAudio.src = a[2];
-    // musicPlay();
+    oAudio.src = a[index1];
+    musicPlay();
 }
+
 oNext.onclick = function() {
     if(index2 == len-1) {
         index2 = 0;
@@ -119,4 +130,31 @@ oNext.onclick = function() {
     }
     oAudio.src = a[index2];
     musicPlay();
+}
+
+// 鼠标点点击改变播放时间   直接绑定在父元素上
+oProBox.onmousedown = function(e) {
+    clearInterval(timer);
+    // var cut1 = oProgress.offsetLeft + oWrapper.offsetLeft + 80;
+    var cut1 = oProBg.getBoundingClientRect().left
+    var cut = e.clientX - cut1;
+    oProActive.style.width = cut + 'px';
+    var t = cut/bgWidth * duration;
+    oCurrentTime.innerHTML = conversion(t);
+    oAudio.currentTime = t;
+    musicPlay();
+}
+
+
+
+// 音量调节
+oVolumn.onmouseover = function(){
+    oVol.style.display = "block";
+}
+oVol.onmouseover = function() {
+    oVol.style.display = "block";
+}
+
+oVol.onmouseout = function() {
+    oVol.style.display = "none";
 }

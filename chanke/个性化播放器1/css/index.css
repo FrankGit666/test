@@ -18,7 +18,7 @@ body {
 }
 
 .wrapper {
-    /* background: #ccc; */
+    position: relative;
     width: 600px;
     margin: 0 auto;
     padding-top: 140px;
@@ -41,6 +41,7 @@ body {
     background: rgba(0,0,0,0.5);
     margin-top: 100px;
     border-radius: 20px;
+    border: 1px solid #fff;
 }
 .tool i {
     color: #fff;
@@ -74,6 +75,7 @@ body {
     width: 30px;
     height: 30px;
 }
+
 .progress {
     position: absolute;
     left: 50%;
@@ -107,7 +109,8 @@ body {
 .pro-bg {
     width: 100%;
     height: 2px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(110, 110, 110, 0.699);
+    cursor: pointer;
 }
 .pro-active {
     position: absolute;
@@ -115,6 +118,7 @@ body {
     left: 0;
     height: 2px;
     background: #fff;
+    cursor: pointer;
 }
 .radio-box {
     position: absolute;
@@ -135,5 +139,61 @@ body {
     height: 8px;
     background: #fff;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+/* 音量调节 */
+.vol {
+    display: none;
+    position: absolute;
+    right: 35px;
+    bottom: 60px;
+    margin-right: -15px;
+    width: 30px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.vol-bg {
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    bottom: 50%;
+    margin-bottom: -90px;
+    width: 2px;
+    height: 180px;
+    background: rgba(255,255,255,0.2);
+}
+
+.vol-active {
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    bottom: 10px;
+    width: 2px;
+    background: #fff;
+}
+
+.vol-box {
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    bottom: 50%;
+    width: 8px;
+    height: 180px;
+}
+
+.vol-radio {
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    display: inline-block;
+    width: 12px;
+    height: 4px;
+    border-radius: 3px;
+    background: #fff;
     cursor: pointer;
 }
