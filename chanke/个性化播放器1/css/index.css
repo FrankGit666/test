@@ -174,26 +174,45 @@ body {
     margin-left: -1px;
     bottom: 10px;
     width: 2px;
+    /* height: 20px; */
     background: #fff;
 }
 
 .vol-box {
     position: absolute;
     left: 50%;
-    margin-left: -4px;
-    bottom: 50%;
-    width: 8px;
-    height: 180px;
+    margin-left: -10px;
+    margin-bottom: -10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* border: 0.1px solid #fff; */
 }
 
 .vol-radio {
     position: absolute;
     left: 50%;
     margin-left: -6px;
+    bottom: 20px;
     display: inline-block;
     width: 12px;
     height: 4px;
     border-radius: 3px;
     background: #fff;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+
+.txt {
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    top: -30px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    /* background: rgba(255,0,0,0.3); */
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
 }

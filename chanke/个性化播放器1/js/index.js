@@ -11,8 +11,15 @@ var oAudio = document.getElementById("audio"),
     oRadioBox = document.getElementsByClassName("radio-box")[0],
     oPreviou = document.getElementsByClassName('previou')[0],
     oNext = document.getElementsByClassName('next')[0],
+
+
     oVolumn = document.getElementsByClassName("volumn")[0],
-    oVol = document.getElementsByClassName("vol")[0];
+    oVol = document.getElementsByClassName("vol")[0],
+    oVolBg = document.getElementsByClassName("vol-bg")[0],
+    oVolActive = document.getElementsByClassName("vol-active")[0],
+    oVolBox = document.getElementsByClassName("vol-box")[0],
+    oVolRadio = document.getElementsByClassName("vol-radio")[0],
+    oTxt = document.getElementsByClassName("txt")[0];
 
 var timer,
     duration,
@@ -119,6 +126,7 @@ oPreviou.onclick = function() {
         index1--;
     }
     oAudio.src = a[index1];
+    oAudio.load();
     musicPlay();
 }
 
@@ -129,6 +137,7 @@ oNext.onclick = function() {
         index2++;
     }
     oAudio.src = a[index2];
+    oAudio.load();
     musicPlay();
 }
 
@@ -151,10 +160,33 @@ oProBox.onmousedown = function(e) {
 oVolumn.onmouseover = function(){
     oVol.style.display = "block";
 }
+
 oVol.onmouseover = function() {
     oVol.style.display = "block";
+    document.body.onclick = function(){
+        oVol.style.display = "none";
+    }
 }
 
-oVol.onmouseout = function() {
-    oVol.style.display = "none";
+oVolBox.onmousedown = function(e){
+    // var Voice = oAudio.volume;
+    var volHeight;
+    document.body.onmousemove = function(e){
+        var TopHeight = e.clientY;
+        var BottomHeight = parseInt(oVolBg.getBoundingClientRect().bottom);
+        volHeight = BottomHeight - TopHeight;
+        if(volHeight < 0){
+            volHeight= 0;
+        }else if(volHeight > 180) {
+            volHeight = 180;
+        }
+        oVolActive.style.height = volHeight + 'px';
+        var txt = parseInt(volHeight/180*100);
+        var text = txt + '%';
+        oTxt.innerHTML = text;
+    }
+    document.body.onmouseup = function() {
+        document.body.onmousemove = null;
+        document.body.onmouseup = null;
+    }
 }
