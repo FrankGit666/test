@@ -69,6 +69,8 @@ function movePro() {
     var currentTime = oAudio.currentTime;
     oCurrentTime.innerHTML = conversion(currentTime);
     oAllTime.innerHTML = conversion(oAudio.duration);
+    
+    duration = oAudio.duration;
     //这个计时器是有延迟的。暂停会出现跳秒的问题，这时候把计时器的刷新时间由1000减少到200；
     oProActive.style.width = currentTime/duration * bgWidth + 'px';
 }
@@ -181,9 +183,11 @@ oVolBox.onmousedown = function(e){
             volHeight = 180;
         }
         oVolActive.style.height = volHeight + 'px';
-        var txt = parseInt(volHeight/180*100);
+        var txt = parseInt(volHeight / 180 * 100);
         var text = txt + '%';
         oTxt.innerHTML = text;
+        oAudio.volume = volHeight / 180;
+        console.log(oAudio.volume);
     }
     document.body.onmouseup = function() {
         document.body.onmousemove = null;
