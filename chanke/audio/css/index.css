@@ -15,6 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom ;
+    user-select: none; /*取消选择文本   消除禁止图标*/
 }
 
 .wrapper {

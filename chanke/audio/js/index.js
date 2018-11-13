@@ -12,7 +12,6 @@ var oAudio = document.getElementById("audio"),
     oPreviou = document.getElementsByClassName('previou')[0],
     oNext = document.getElementsByClassName('next')[0],
 
-
     oVolumn = document.getElementsByClassName("volumn")[0],
     oIconLaba = document.getElementsByClassName('icon-laba')[0],
     oIconStop = document.getElementsByClassName('icon-stop')[0],
@@ -27,7 +26,6 @@ var timer,
     duration,
     bgWidth = 232,
     volHeight;
-
 
 //ondurationchange  网络资源加载时用这个，本地资源加载时用oncanplay
 //oAudio.oncanplay = function () {
@@ -119,7 +117,6 @@ oRadioBox.onmousedown = function(e) {
     }
 }
 
-
 // 点击上一首，下一首
 var a = new Array();
     a[0] = "./source/song0.mp3";
@@ -128,7 +125,6 @@ var a = new Array();
 var index1 = 0,
     index2 = 0,
     len = a.length;
-
 oPreviou.onclick = function() {
     if(index1 == 0) {
         index1 = 2;
@@ -139,7 +135,6 @@ oPreviou.onclick = function() {
     oAudio.load();
     musicPlay();
 }
-
 oNext.onclick = function() {
     if(index2 == len-1) {
         index2 = 0;
@@ -164,8 +159,6 @@ oProBox.onmousedown = function(e) {
     musicPlay();
 }
 
-
-
 // 音量调节
 oVolumn.onmouseover = function(){
     oVol.style.display = "block";
@@ -177,7 +170,6 @@ oVol.onmouseover = function() {
         oVol.style.display = "none";
     }
 }
-
 oVolBox.onmousedown = function(e){
     document.body.onmousemove = function(e){
         var TopHeight = e.clientY;
