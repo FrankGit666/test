@@ -14,6 +14,8 @@ var oAudio = document.getElementById("audio"),
 
 
     oVolumn = document.getElementsByClassName("volumn")[0],
+    oIconLaba = document.getElementsByClassName('icon-laba')[0],
+    oIconStop = document.getElementsByClassName('icon-stop')[0],
     oVol = document.getElementsByClassName("vol")[0],
     oVolBg = document.getElementsByClassName("vol-bg")[0],
     oVolActive = document.getElementsByClassName("vol-active")[0],
@@ -23,7 +25,8 @@ var oAudio = document.getElementById("audio"),
 
 var timer,
     duration,
-    bgWidth = 232;
+    bgWidth = 232,
+    volHeight;
 
 
 //ondurationchange  网络资源加载时用这个，本地资源加载时用oncanplay
@@ -35,6 +38,11 @@ window.onload = function(){
     duration = oAudio.duration;
     // oAllTime.innerHTML = conversion(this.duration);
     oAllTime.innerHTML = conversion(duration);
+    // 音量控制条初始化
+    oAudio.volume = 0.5;
+    volHeight = 90;
+    console.log(volHeight);
+    oVolActive.style.height = volHeight + 'px';
 }
 
 function  conversion (time) {
@@ -171,8 +179,6 @@ oVol.onmouseover = function() {
 }
 
 oVolBox.onmousedown = function(e){
-    // var Voice = oAudio.volume;
-    var volHeight;
     document.body.onmousemove = function(e){
         var TopHeight = e.clientY;
         var BottomHeight = parseInt(oVolBg.getBoundingClientRect().bottom);
@@ -187,7 +193,13 @@ oVolBox.onmousedown = function(e){
         var text = txt + '%';
         oTxt.innerHTML = text;
         oAudio.volume = volHeight / 180;
-        console.log(oAudio.volume);
+        if(txt == 0){
+            oIconLaba.style.display = "none";
+            oIconStop.style.display = "block";
+        }else{
+            oIconLaba.style.display = "block";
+            oIconStop.style.display = "none";
+        }
     }
     document.body.onmouseup = function() {
         document.body.onmousemove = null;

@@ -75,6 +75,16 @@ body {
     width: 30px;
     height: 30px;
 }
+.volumn .icon-stop {
+    display: none;
+    position: absolute;
+    top: 5px;;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
 
 .progress {
     position: absolute;
@@ -193,7 +203,7 @@ body {
     position: absolute;
     left: 50%;
     margin-left: -6px;
-    bottom: 20px;
+    bottom: 18px;
     display: inline-block;
     width: 12px;
     height: 4px;
