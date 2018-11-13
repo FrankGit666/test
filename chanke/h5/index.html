@@ -5,19 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>H5结构</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <header>
+    <header class="header">
+        <div class="container">
+            <div class="left">
+                <ul>
+                    <li>主页</li>
+                    <li class="active">公司简介</li>
+                    <li>成果展示</li>
+                    <li>人才队伍</li>
+                    <li>全球资讯</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>登录</li>
+                    <li>注册</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </div>
         
     </header>
-    <main>
-        <aside>
 
-        </aside>
-        <section>
-            
-        </section>
-    </main>
-    <footer></footer>
+
+    <div class="content container">
+        <nav class="nav">
+            <ul id="nav">
+                <li>总经理</li>
+                <li class="active">财务部</li>
+                <li>项目部</li>
+                <li>行政部</li>
+                <li>技术部</li>
+            </ul>
+        </nav>
+        <main class="main">
+            <div class="none active">
+                <p>这是<strong>总经理</strong>办公室介绍</p>
+            </div>
+            <div class="none">
+                <p>这是<strong>财务部</strong>办公室介绍</p>
+            </div>
+            <div class="none">
+                <p>这是<strong>项目部</strong>办公室介绍</p>
+            </div>
+            <div class="none">
+                <p>这是<strong>行政部</strong>办公室介绍</p>
+            </div>
+            <div class="none">
+                <p>这是<strong>技术部</strong>办公室介绍</p>
+            </div>
+        </main>
+    </div>
+    <footer class="clearfix">
+        <div class="container">
+            <dl>
+                <dt>公司简介</dt>
+                <dd>
+                    <a href="">公司概况</a>
+                    <a href="">发展目标</a>
+                    <a href="">公司愿景</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>人才队伍</dt>
+                <dd>
+                    <a href="">团队</a>
+                    <a href="">合作伙伴</a>
+                    <a href="">...</a>
+                </dd>
+                
+            </dl>
+            <dl>
+                <dt>联系我们</dt>
+                <dd>
+                    <a href="">招贤纳士</a>
+                    <a href="">联系方式</a>
+                    <a href="">...</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>联系我们</dt>
+                <dd>
+                    <a href="">招贤纳士</a>
+                    <a href="">联系方式</a>
+                    <a href="">...</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>全球资讯</dt>
+                <dd>
+                    <a href="">工作动态</a>
+                    <a href="">新闻公告</a>
+                    <a href="">...</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="state">技术支持：某技术支持公司信息中心谢耀庆</div>
+    </footer>
+    <script src="./js/index.js"></script>
 </body>
 </html>
