@@ -5,8 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+            top: 50%;
+            margin-top: -225px;
+            left: 50%;
+            margin-left: -225px;
+            width: 450px;
+            height: 450px;
+        }
+        canvas{
+            position: absolute;top: 50%;margin-top: -200px;left: 50%;margin-left: -200px;
+            background-image: url('jiang.jpg') ;
+            background-repeat: no-repeat;
+            background-position: center;  /*写一个center代表水平方向和垂直方向都居中*/
+        }
+    </style>
 </head>
 <body>
-    
+    <img src="./border.png" alt="">
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        var myCanvas = document.getElementById('myCanvas');
+        var ctx = myCanvas.getContext('2d');  
+        //canvas  API 会有3d的发展，但是当时只是做2d，当他们想要发展3d的时候，其他技术的3d已经跟成熟了
+        var w = myCanvas.width;
+        var h = myCanvas.height;
+        var lastPos = {};  //定义一个对象，记录鼠标按下时的位置
+
+
+        function init(){  //入口函数，浏览器一刷新时，加载文档时就执行一下这个函数；默认效果放在入口函数中
+            var img = new Image();
+            var random = Math.random();
+            if(random < 0.1){   // 提升用户体验：等图片加载完成之后再进行后面的刮的动作
+                img.src = './jiang.jpg';
+                // myCanvas.style.backgroundImage = 'url(jiang.png)';   //这里不能用onload属性，只有DOM元素才能使用onload的属性，所以我们创建一个DOM元素
+            }else{
+                img.src = './no.png';
+                // myCanvas.style.backgroundImage = 'url(no.png)';
+            }
+
+            img.onload = function(){
+                myCanvas.style.backgroundImage = 'url('+ img.src +')';
+                //鼠标按下
+                myCanvas.addEventListener('mousedown', downFun);
+            }
+            ctx.beginPath();
+            ctx.fillStyle = '#aaa';
+            ctx.fillRect(0, 0, w, h);
+            ctx.globalCompositeOperation = 'destination-out'; 
+        }
+        init();   //入口函数，浏览器一刷新时，加载文档时就执行一下这个函数；默认效果放在入口函数中
+
+        function downFun(e){
+            //记录鼠标按下的位置，即记录断点的前一个点的位置
+            lastPos.x = e.clientX - myCanvas.offsetLeft;
+            lastPos.y = e.clientY - myCanvas.offsetTop;
+
+            //鼠标第一次点击，画一个小圆点圆，如果没有这一步，鼠标只能点击出来两个小圆点
+            ctx.beginPath();
+            ctx.arc(lastPos.x, lastPos.y, 20, 0, Math.PI*2);
+            ctx.closePath();
+            ctx.fill();
+
+            myCanvas.addEventListener('mousemove',moveFun);  //绑定在全局下面，保证鼠标在canvas元素外也可以擦除
+            // console.log('mousedown')
+            document.body.addEventListener('mouseup',upFun);   // 还没有按不可能鼠标抬起
+        }
+        function moveFun(e){   //鼠标移动画圆
+            var x = e.clientX - myCanvas.offsetLeft;
+            var y = e.clientY - myCanvas.offsetTop;
+            // console.log(x);
+            // console.log(y);
+
+            ctx.beginPath();
+            ctx.moveTo(lastPos.x,lastPos.y);
+            ctx.lineTo(x,y);
+            ctx.lineWidth = 40;    //设置线宽
+            ctx.lineCap = 'round';   //设置线的两端效果（圆角）
+            ctx.stroke();
+
+            // ---------------------这个部分代码是没有必要的，可以尝试注释掉的效果--------------
+            // ctx.beginPath();
+            // ctx.arc(x, y, 20, 0, Math.PI*2);
+            // ctx.closePath();
+            // ctx.fill();
+            // console.log('mousemove')
+            // -------------------------------------------------------------------------------
+
+
+            //最开始的时候lastPos的值是鼠标第一次按下的值，但是移动之后moveTo的值是第二个点、第三个点...，所以lastPos.x，lastPos.y作为moveTo的新起点
+            lastPos.x = x;
+            lastPos.y = y;
+
+        }
+        function upFun(){
+            myCanvas.removeEventListener('mousemove',moveFun);   //mousemove这个事件响应速度比较慢，所以刮的时候存在断点，那么我们只有直接用线把断点之间连接起来
+            document.body.removeEventListener('mouseup',upFun);
+            clearCover();
+        }
+        // 判断擦除部分是否超过70%，如果超过，则全部蒙层清除（判断像素getImageData(x, y, dx, dy),判断rgba中的a为0的占比)
+        // 而且这个判断必须绑定在鼠标抬起的时候，如果绑定在鼠标移动函数上，没移动一次都要执行一次判断，这样比较耗性能
+        function clearCover(){
+            var imageData = ctx.getImageData(0, 0, w, h);
+            var sum = 0;
+            for(var i = 0; i < imageData.data.length; i+=4){
+                if(imageData.data[i] == 0) {
+                    sum++;
+                }
+            } 
+            if(sum > w*h*0.7){
+                ctx.clearRect(0, 0, w, h);
+            }
+        }
+
+
+
+        // var img = new Image();
+        // img.src = 'jiang.jpg';
+
+        // img.onload = function(){
+            // var bg = ctx.createPattern(img, 'no-repeat');
+            // ctx.fillStyle = bg;
+            // ctx.fillRect(0, 0, w, h);
+
+            // ctx.beginPath();
+            // ctx.fillStyle = '#aaa';
+            // ctx.fillRect(0, 0, w, h);
+
+            // ctx.globalCompositeOperation = 'destination-out';  
+            //新像素会把新像素所在的区域全部擦除掉，只要是在canvas画上的图片和蒙层都会被全部清除，只有给canvas添加背景图片，才能保证背景不会被擦除掉
+
+            
+            // ctx.beginPath();
+            // ctx.arc(100,100,100,0,Math.PI*2);
+            // ctx.fill();
+        // }
+    </script>
 </body>
 </html>
