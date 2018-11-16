@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+}
+.min{
+    float: left;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+}
+.min img{
+    width: 100%;
+}
+.cover{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+    height: 200px;
+    background-image: url('../img/hover.png');
+}
+.max{
+    position: relative;
+    float: left;
+    display: none;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+.max img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
