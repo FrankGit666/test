@@ -27,7 +27,7 @@
 }
 
 .val {
-    width: 100px;
+    width: 0;
     height: 30px;
     background: #333;
 }
