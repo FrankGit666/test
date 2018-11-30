@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav {
+            height: 50px;
+        }
+
+        ul {
+            display: flex;
+            width: 600px;
+            background: #ccc;
+            font-size: 0;
+        }
+
+        li {
+            flex-grow: 1;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 16px;
+            border-right: 10px solid #000;
+            background: 
+                linear-gradient(to right, #888, transparent 40%),
+                linear-gradient(to right, transparent 40%, #888);
+        }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>首页</li>
+            <li>课程</li>
+            <li>学员</li>
+            <li>老师</li>
+            <li>关于我们</li>
+        </ul>
+    </nav>
+</body>
+</html>
