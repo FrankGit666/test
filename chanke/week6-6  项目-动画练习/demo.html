@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <style>
+        .demo {
+            width: 800px;
+            height: 400px;
+            background: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">demo</div>
+    <script>
+        var oDemo = document.getElementsByClassName('demo')[0];
+        
+        oDemo.onmouseenter = function(e) {
+            var dir = getDirecton(e, this);
+            console.log(dir);
+        }
+        oDemo.onmouseleave = function(e) {
+            var dir = getDirecton(e, this);
+            console.log(dir);
+        }
+    
+        function getDirecton(e, ele){
+            var w = ele.offsetWidth;
+            var h = ele.offsetHeight;
+            var x = (e.offsetX - w/2) * (w > h ? h / w : 1);
+            var y = (e.offsetY - h/2) * (h > w ? w / h : 1);
+            var d = ((Math.round((Math.atan2(y,x) * (180/Math.PI) + 180) / 90)) + 3) %4;
+            // console.log(d);
+            return d;
+        }
+    </script>
+</body>
+</html>

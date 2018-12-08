@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <style>
+        .wrapper {
+            perspective: 600px;
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            
+            animation: move 5s linear infinite;
+        }
+        .item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 50px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .one {
+            background: pink;
+            transform: rotateX(0) translateZ(100px);
+        }
+
+        .two {
+            background: orange;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .three {
+            background: green;
+            transform: rotateX(180deg) translateZ(100px);
+        }
+
+        .four {
+            background: red;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .five {
+            background: black;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .six {
+            background: blue;
+            transform: rotateY(-90deg) translateZ(100px);
+        } 
+        @keyframes move {
+            0% {
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item one">1</div>
+            <div class="item two">2</div>
+            <div class="item three">3</div>
+            <div class="item four">4</div>
+            <div class="item five">5</div>
+            <div class="item six">6</div>
+        </div>
+    </div>
+</body>
+</html>
